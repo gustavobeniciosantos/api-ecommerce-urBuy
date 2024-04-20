@@ -5,6 +5,7 @@ import { loginUser } from "./routes/login-user";
 import { registerAdmin } from "./routes/register-admin";
 import { addProduct } from "./routes/add-product";
 import { getProductList } from "./routes/get-product-list";
+import { addToCart } from "./routes/add-to-cart";
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -17,7 +18,7 @@ app.register(loginUser)
 app.register(registerAdmin)
 app.register(addProduct)
 app.register(getProductList)
-
+app.register(addToCart)
 
 app.listen({port: 5050}).then(() =>{
     console.log('Server is running')
